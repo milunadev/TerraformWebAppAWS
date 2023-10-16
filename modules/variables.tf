@@ -8,3 +8,7 @@ variable "HTTPScertificate_arn" {
   type = string
   sensitive = true
 }
+
+variable "domain" {
+  default = "miluna.dev"
+}
