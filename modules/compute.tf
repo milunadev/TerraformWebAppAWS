@@ -14,7 +14,7 @@ resource "null_resource" "instance_provisioning" {
     ec2_id = aws_instance.instance_1.id
   }
   provisioner "local-exec" {
-    working_dir = "../scripts"
-    command = "sudo bash local.sh ${ aws_instance.instance_1.public_ip }"
+    
+    command = "sudo bash ../scripts/local.sh ${ aws_instance.instance_1.public_ip }"
   }
 }
