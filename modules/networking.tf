@@ -6,7 +6,7 @@ data "aws_vpc" "default_vpc" {
 #Filtramos las subredes que pertenezcan al default vpc
 data "aws_subnets" "default_subnets" {
   filter {
-    name = "vpc_id"
+    name = "vpc-id"
     values = [ data.aws_vpc.default_vpc.id ]
   }
 }

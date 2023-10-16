@@ -41,7 +41,7 @@ resource "aws_lb_target_group" "milunadevBackend" {
   }
 }
 resource "aws_lb_target_group_attachment" "backend" {
-  target_group_arn = aws_lb_target_group.milunadevBackend
+  target_group_arn = aws_lb_target_group.milunadevBackend.arn
   target_id        = aws_instance.instance_1.id
   port             = 3001
 }
