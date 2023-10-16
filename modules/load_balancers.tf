@@ -69,7 +69,7 @@ resource "aws_lb_listener" "https" {
     ## REGLAS DEL AGENTE DE ESCUCHA ##
 resource "aws_lb_listener_rule" "frontend_rule" {
   listener_arn = aws_lb_listener.https.arn
-  priority     = 10
+  priority     = 100
 
   condition {
     path_pattern {
@@ -85,7 +85,7 @@ resource "aws_lb_listener_rule" "frontend_rule" {
 
 resource "aws_lb_listener_rule" "backend_rule" {
   listener_arn = aws_lb_listener.https.arn
-  priority     = 100
+  priority     = 10
 
   condition {
     path_pattern {
