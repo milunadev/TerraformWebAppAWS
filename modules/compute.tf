@@ -6,7 +6,7 @@ resource "aws_instance" "instance_1" {
   tags = {
     Name =  var.ec2_name
   }
-  security_groups = [ aws_security_group.MilunaWEB_EC2_SG.id ]
+  security_groups = [ aws_security_group.MilunaWEB_EC2_SG.name]
 }
 
 resource "null_resource" "instance_provisioning" {
