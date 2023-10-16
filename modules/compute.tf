@@ -9,12 +9,3 @@ resource "aws_instance" "instance_1" {
   security_groups = [ aws_security_group.MilunaWEB_EC2_SG.name]
 }
 
-resource "null_resource" "instance_provisioning" {
-  triggers = {
-    ec2_id = aws_instance.instance_1.id
-  }
-  provisioner "local-exec" {
-    
-    command = "bash local.sh ${aws_instance.instance_1.public_ip}"
-  }
-}
