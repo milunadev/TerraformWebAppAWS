@@ -26,11 +26,19 @@ resource "aws_security_group_rule" "allow_frontend" {
   protocol = "tcp"
   cidr_blocks = [ "0.0.0.0/0" ]
 }
+resource "aws_security_group_rule" "allow_backe" {
+  type = "ingress"
+  security_group_id = aws_security_group.MilunaWEB_EC2_SG.id
+  from_port = 3001
+  to_port = 3001
+  protocol = "tcp"
+  cidr_blocks = [ "0.0.0.0/0" ]
+}
 resource "aws_security_group_rule" "allow_ssh" {
   type = "ingress"
   security_group_id = aws_security_group.MilunaWEB_EC2_SG.id
   from_port = 22
-  to_port = 22
+  to_port = 22  
   protocol = "tcp"
   cidr_blocks = [ "0.0.0.0/0" ]
 }
