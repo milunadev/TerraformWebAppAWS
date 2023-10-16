@@ -15,6 +15,6 @@ resource "null_resource" "instance_provisioning" {
   }
   provisioner "local-exec" {
     
-    command = "bash ../scripts/local.sh ${ aws_instance.instance_1.public_ip }"
+    command = "bash ./local.sh ${ aws_instance.instance_1.public_ip }"
   }
 }
